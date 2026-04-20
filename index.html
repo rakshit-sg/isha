@@ -17,7 +17,6 @@
   --cream: #f5f0e8;
   --muted: #999;
   --green: #4a7c59;
-  --orange: #c9a84c;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -53,7 +52,7 @@ nav {
 .nav-links a {
   color: var(--cream); text-decoration: none; font-size: 0.75rem;
   letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500;
-  padding: 0 22px; height: 68px; display: flex; align-items: center;
+  padding: 0 18px; height: 68px; display: flex; align-items: center;
   border-bottom: 2px solid transparent; transition: all 0.25s; margin-top: 2px;
   opacity: 0.8;
 }
@@ -201,9 +200,7 @@ nav {
 }
 .ie-time-row { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 18px; }
 .ie-time-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
-.ie-time-text strong {
-  display: block; font-size: 1rem; color: var(--cream); font-weight: 600;
-}
+.ie-time-text strong { display: block; font-size: 1rem; color: var(--cream); font-weight: 600; }
 .ie-time-text span { font-size: 0.9rem; color: var(--muted); }
 .ie-sep { height: 1px; background: rgba(201,168,76,0.15); margin: 28px 0; }
 .ie-intro-box {
@@ -220,6 +217,66 @@ nav {
 .ie-venue-text a:hover { text-decoration: underline; }
 .ie-lang { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 32px; }
 .ie-lang strong { color: var(--cream); }
+
+/* ── SHARINGS ── */
+.sharings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+}
+.sharing-card {
+  background: var(--dark2);
+  border: 1px solid rgba(201,168,76,0.18);
+  border-radius: 4px;
+  padding: 40px 36px 32px;
+  position: relative;
+  transition: transform 0.3s, border-color 0.3s;
+}
+.sharing-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(201,168,76,0.45);
+}
+.sharing-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  border-radius: 4px 4px 0 0;
+}
+.sharing-quote-icon {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 5rem; line-height: 0.6;
+  color: var(--gold); opacity: 0.35;
+  margin-bottom: 20px; display: block;
+  font-weight: 700;
+}
+.sharing-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: rgba(245,240,232,0.88);
+  line-height: 1.85;
+  margin-bottom: 28px;
+}
+.sharing-author {
+  display: flex; align-items: center; gap: 16px;
+  border-top: 1px solid rgba(201,168,76,0.12);
+  padding-top: 20px;
+}
+.sharing-author-avatar {
+  width: 46px; height: 46px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem; color: var(--dark); font-weight: 700;
+  flex-shrink: 0;
+}
+.sharing-author-name {
+  font-size: 1rem; color: var(--cream); font-weight: 500; letter-spacing: 0.05em;
+}
+.sharing-author-loc {
+  font-size: 0.78rem; color: var(--muted); margin-top: 2px; letter-spacing: 0.05em;
+}
 
 /* ── PROGRAM CARDS ── */
 .programs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 26px; }
@@ -314,10 +371,7 @@ nav {
 .about-text p { font-size: 1rem; color: rgba(245,240,232,0.72); margin-bottom: 20px; line-height: 1.9; }
 .stats-row { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 36px; }
 .stat { border-left: 3px solid var(--gold); padding-left: 20px; }
-.stat-num {
-  font-family: 'Cormorant Garamond', serif; font-size: 2.4rem;
-  color: var(--gold); line-height: 1; font-weight: 600;
-}
+.stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; color: var(--gold); line-height: 1; font-weight: 600; }
 .stat-lbl { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; }
 .about-visual { text-align: center; font-size: 130px; opacity: 0.08; }
 
@@ -326,10 +380,7 @@ footer {
   background: #080808; border-top: 1px solid rgba(201,168,76,0.2);
   text-align: center; padding: 56px 24px;
 }
-.footer-logo {
-  font-family: 'Cormorant Garamond', serif; font-size: 1.6rem;
-  color: var(--cream); margin-bottom: 8px;
-}
+.footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--cream); margin-bottom: 8px; }
 footer .footer-sub { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.14em; margin-bottom: 28px; }
 .footer-links { display: flex; justify-content: center; gap: 36px; flex-wrap: wrap; margin-bottom: 28px; }
 .footer-links a { color: var(--gold); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; opacity: 0.85; }
@@ -347,6 +398,7 @@ footer .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .about-visual { display: none; }
   .venue-grid { grid-template-columns: 1fr; }
+  .sharings-grid { grid-template-columns: 1fr; }
 }
 @media(max-width: 600px) {
   .hero h1 { font-size: 2.8rem; }
@@ -369,6 +421,7 @@ footer .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
   </a>
   <ul class="nav-links">
     <li><a href="#inner-engineering">Inner Engineering</a></li>
+    <li><a href="#sharings">Sharings</a></li>
     <li><a href="#programs">Programs</a></li>
     <li><a href="#venue">Venue</a></li>
     <li><a href="#about">About</a></li>
@@ -462,6 +515,51 @@ footer .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
         <p class="ie-lang">Language: <strong>English</strong></p>
         <a href="https://isha.co/ie-omr" target="_blank" class="btn btn-gold" style="display:block;text-align:center;">Register Now</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SHARINGS ══ -->
+<section class="section section-bg-dark3" id="sharings">
+  <div class="section-inner">
+    <p class="section-label">Participant Sharings</p>
+    <h2 class="section-title">Life After Shambhavi</h2>
+    <div class="section-divider"></div>
+    <p class="section-sub">Hear from those who have walked this path — real experiences from the OMR community.</p>
+    <div class="sharings-grid">
+
+      <!-- ── SHARING 1 ── -->
+      <div class="sharing-card">
+        <div class="sharing-quote-icon">"</div>
+        <p class="sharing-text">This program is a turning point in my life and two phases of my life are life before Shambhavi and life after Shambhavi. After the program I'm more joyful, exuberant and energetic throughout the day. Enormous gratitude to Sadhguru for offering these tools of well-being to us.</p>
+        <div class="sharing-author">
+          <div class="sharing-author-avatar">Y</div>
+          <div>
+            <div class="sharing-author-name">Yukesh</div>
+            <div class="sharing-author-loc">📍 Kelambakkam, Chennai</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════
+           ADD NEW SHARING HERE
+           Copy the block below, remove comment tags,
+           and fill in the details.
+           Change the avatar letter to first letter of name.
+
+      <div class="sharing-card">
+        <div class="sharing-quote-icon">"</div>
+        <p class="sharing-text">Participant sharing text goes here.</p>
+        <div class="sharing-author">
+          <div class="sharing-author-avatar">A</div>
+          <div>
+            <div class="sharing-author-name">Name</div>
+            <div class="sharing-author-loc">📍 Location</div>
+          </div>
+        </div>
+      </div>
+      ══════════════════════════════════════ -->
+
     </div>
   </div>
 </section>
@@ -604,42 +702,15 @@ footer .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
 <section class="section section-bg-dark2" id="venue">
   <div class="section-inner">
     <p class="section-label">Find Us</p>
-    <h2 class="section-title">Program Venues</h2>
+    <h2 class="section-title">Program Venue</h2>
     <div class="section-divider"></div>
-    <p class="section-sub">All programs are held at accessible school premises along OMR, Sholinganallur — easily reachable from across Chennai.</p>
-    <div class="venue-grid">
-      <div class="venue-card">
-        <h3>📍 Sree Iyyappa Matric. Hr. Sec. School</h3>
-        <p>25 &amp; 30, Velu Naicker Street<br/>Sholinganallur, Chennai – 600119</p>
-        <p class="venue-programs">Surya Shakthi · Children's Hatha Yoga</p>
-        <a href="https://g.co/kgs/Z1JMFm" target="_blank">Open in Google Maps ↗</a>
-      </div>
+    <p class="section-sub">All programs are held at accessible school premises along OMR, Sholinganallur</p>   
       <div class="venue-card">
         <h3>📍 Sree Iyappa School</h3>
-        <p>Sholinganallur, OMR<br/>Chennai – 600119</p>
+        <p>Sholinganallur, OMR</p>
         <p class="venue-programs">Inner Engineering · Shakti Chalana Kriya</p>
         <a href="https://maps.app.goo.gl/62eQYvRrwGPHJTFk9" target="_blank">Open in Google Maps ↗</a>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ ABOUT ══ -->
-<section class="section section-bg-dark" id="about">
-  <div class="section-inner">
-    <div class="about-grid">
-      <div class="about-text">
-        <p class="section-label">About Us</p>
-        <h2 class="section-title" style="text-align:left;font-size:2.4rem;">Isha OMR —<br/>A Volunteer Heart</h2>
-        <div class="section-divider" style="margin-left:0;"></div>
-        <p>The Isha Yoga Center – OMR is a fully volunteer-run center serving the communities along Old Mahabalipuram Road in Chennai. Every class and program here is offered freely by dedicated volunteers who have experienced the power of inner transformation.</p>
-        <p>Guided by the vision of Sadhguru, our center brings time-tested yogic practices directly to your neighborhood — making inner wellbeing accessible to everyone regardless of background or experience.</p>
-        <div class="stats-row">
-          <div class="stat"><div class="stat-num">100%</div><div class="stat-lbl">Volunteer Driven</div></div>
-          <div class="stat"><div class="stat-num">All Ages</div><div class="stat-lbl">Welcome Here</div></div>
-        </div>
-      </div>
-      <div class="about-visual">🪷</div>
     </div>
   </div>
 </section>
